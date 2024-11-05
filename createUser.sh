@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo @@@@@@@@@@@@@@@@@@@@@
-echo + User Creator v0.44 +
+echo + User Creator v0.444 +
 echo @@@@@@@@@@@@@@@@@@@@@
 echo
 echo
@@ -17,6 +17,7 @@ case $option in
   1)
 	read -p "Enter the new users name: " username
 	sudo useradd $username
+	sudo passwd $username
 	echo User $username created succesfully
 	;;
   2)
@@ -28,6 +29,7 @@ case $option in
 	
 	
 	sudo useradd $username -e $expiredate
+	sudo passwd $username
 	echo User $username created succesfully, it will expire on $expiredate
 	;;
   *)
